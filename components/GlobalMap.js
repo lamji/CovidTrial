@@ -9,7 +9,7 @@ export default function GlobalMap({country}){
 
 
     useEffect(() => {
-        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${country}.json?access_token=${process.env.NEXT_PUBLIC_REACT_APP_MAPBOX_KEY}`)
+        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${country}.json?access_token=${process.env.eyJ1IjoibGFtamlsYW1wYWdvIiwiYSI6ImNrZnpjbjRvaDBiOGUydG9iZzFpMXVubnoifQ.OB02jXjeregqO3TB-t7uhA}`)
           .then(res => res.json())
           .then(data => {
             setLongitude(data.features[0].center[0])
