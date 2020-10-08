@@ -7,22 +7,22 @@ export default function Banner({ country, cases, criticals, deaths, recoveries }
        <Jumbotron className="px-5 py-3">
         <h1>{country}</h1>
        <Row>
-            <Col className="p-1">
+            <Col lg={4} xs={12} className="p-1">
                 <Card className="p-2 text-center">
                     <Card.Text>Total Cases: {cases}</Card.Text>
                 </Card>
             </Col>
-            <Col className="p-1">
+            <Col lg={4} xs={12} className="p-1">
                 <Card className="p-2 text-center">
                     <Card.Text>Total Deaths: {deaths}</Card.Text>
                 </Card>
             </Col>
-            <Col className="p-1">
+            <Col lg={4} xs={12} className="p-1">
                 <Card className="p-2 text-center">
                     <Card.Text>Recoveries: {recoveries}</Card.Text>
                 </Card>
             </Col>
-            <Col lg={12} className="p-1">
+            <Col lg={12} xs={12} className="p-1">
                 <Card className="p-2 text-center">
                     <Card.Text>Critical cases: {criticals}</Card.Text>
                 </Card>
