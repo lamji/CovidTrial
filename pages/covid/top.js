@@ -37,7 +37,7 @@ export default function top({data}){
         map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
        
         for(let i = 0; i < 10; i++){
-          fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${countriesCases[i].name}.json?access_token=${process.env.NEXT_PUBLIC_REACT_APP_MAPBOX_KEY}`)
+          fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${countriesCases[i].name}.json?access_token=${process.env.pk.eyJ1IjoibGFtamlsYW1wYWdvIiwiYSI6ImNrZnpjbjRvaDBiOGUydG9iZzFpMXVubnoifQ.OB02jXjeregqO3TB-t7uhA}`)
           .then(res => res.json())
           .then(data => {
              new mapboxgl.Marker()

@@ -2,7 +2,7 @@ import toNum from '../toNum'
 import numberWithCommas from '../toString'
 import  { Jumbotron, Form, Button, Row, Col, Card }from 'react-bootstrap'
 import mapboxgl from 'mapbox-gl'
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_REACT_APP_MAPBOX_KEY
+mapboxgl.accessToken = process.env.pk.eyJ1IjoibGFtamlsYW1wYWdvIiwiYSI6ImNrZnpjbjRvaDBiOGUydG9iZzFpMXVubnoifQ.OB02jXjeregqO3TB-t7uhA
 import { useState, useRef, useEffect } from 'react'
 import DoughnutChart from '../components/DoughnutChart'
 
