@@ -2,7 +2,7 @@ import toNum from '../toNum'
 import numberWithCommas from '../toString'
 import  { Jumbotron, Form, Button, Row, Col, Card }from 'react-bootstrap'
 import mapboxgl from 'mapbox-gl'
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_REACT_APP_MAPBOX_KEY
+mapboxgl.accessToken = 'pk.eyJ1IjoibGFtamlsYW1wYWdvIiwiYSI6ImNrZnpjbjRvaDBiOGUydG9iZzFpMXVubnoifQ.OB02jXjeregqO3TB-t7uhA'
 import { useState, useRef, useEffect } from 'react'
 import DoughnutChart from '../components/DoughnutChart'
 
@@ -61,7 +61,7 @@ export default function Home({data}){
           setTargetCountry("")
           console.log(match)
 
-          fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${targetCountry}.json?access_token=${process.env.NEXT_PUBLIC_REACT_APP_MAPBOX_KEY}`)
+          fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${targetCountry}.json?access_token=${pk.eyJ1IjoibGFtamlsYW1wYWdvIiwiYSI6ImNrZnpjbjRvaDBiOGUydG9iZzFpMXVubnoifQ.OB02jXjeregqO3TB-t7uhA}`)
           .then(res => res.json())
           .then(data => {
             setLongtitude(data.features[0].center[0])
