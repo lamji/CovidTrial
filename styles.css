@@ -1,0 +1,90 @@
+body{
+  padding:0px;
+  position: relative;
+	margin:0px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+  background-size: cover;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+}
+.mapContainer {
+    min-height: 50vh;
+    width: 100%;
+}
+.Jumbotron{
+  background: url("https://www.thedigitalglobetrotter.com/wp-content/uploads/2018/06/wp-15282083881637520615349667172531.jpg")no-repeat center center fixed ;
+  background-size: cover;
+  height: 150px;
+}
+.light{
+
+  margin: 0 auto;
+}
+footer{
+    bottom: 0;
+    background-color: #686d76;
+    text-align: center;
+    font-size: 12px;
+    margin-top: auto;
+    padding:20px;
+    color:white;
+    width: 100%;
+  }
+  .head{
+    color:white;
+    background-color: #686d76;
+  }
+  .barChart{
+    width: 70%;
+  }
+  .index{
+    background: url("https://www.icfj.org/sites/default/files/styles/large/public/2020-03/martin-sanchez-j2c7yf223Mk-unsplash.jpg?itok=8taA_6DE")no-repeat center center  ;
+    background-size: cover;
+    height: 250px;
+  }
+  .topCard{
+    min-height: 100vh;
+  }
+
+  .one{
+    background-color: #ff0000; 
+  }
+  .two{
+    background-color:#f8c471 ;
+  }
+
+  .three{
+    background-color:#7fe5f0 ;
+  }
+
+  .four{
+    background-color:#aeb6bf ;
+  }
+
+  .five{
+    background-color:#00ff00 ;
+  }
+
+  .six{
+    background-color: #ff80ed ;
+  }
+
+  .seven{
+    background-color:#f08080 ;
+  }
+
+  .eight{
+    background-color:#7d3c98 ;
+  }
+
+  .nine{
+    background-color:#407294 ;
+  }
+
+  .ten{
+    background-color:#065535 ;
+  }
