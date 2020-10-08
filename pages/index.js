@@ -121,7 +121,7 @@ export default function Home({data}){
             <Col className="p-1">
               <Card className="p-2 text-center  four">
               <h6 className=" p-0 mb-0">{numberWithCommas(recoveries)}</h6>
-              <small className="mb-0 p-0">Recovered</small> 
+              <small className="mb-0 p-0">Recoveries</small> 
               </Card>
             </Col>
             <Col className="p-1">
