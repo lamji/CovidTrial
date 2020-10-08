@@ -9,7 +9,7 @@ export default function Banner({ country, cases, criticals, deaths, recoveries }
        <Row>
             <Col className="p-1">
                 <Card className="p-2 text-center">
-                    <Card.Text>Cases: {cases}</Card.Text>
+                    <Card.Text>Total Cases: {cases}</Card.Text>
                 </Card>
             </Col>
             <Col className="p-1">
