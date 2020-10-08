@@ -26,11 +26,11 @@ body{
 }
 footer{
     bottom: 0;
-    background-color: #686d76;
+    background-color: black;
     text-align: center;
     font-size: 12px;
     margin-top: auto;
-    padding:20px;
+    padding:30px;
     color:white;
     width: 100%;
   }
