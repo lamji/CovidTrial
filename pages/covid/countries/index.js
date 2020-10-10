@@ -9,7 +9,7 @@ export default function top({data}){
           <Col lg={3} sm={4} className="my-2">
                <ListGroup.Item className="text-center p-3" key={country.country_name}>
             <Link href={`/covid/countries/${country.country_name.replace( /\s/g, '')}`}>
-              <a>{country.country_name}</a>
+              <a >{country.country_name}</a>
             </Link>
            </ListGroup.Item>
           </Col>
@@ -18,7 +18,7 @@ export default function top({data}){
     })
         return(
             <React.Fragment>
-            <Row>
+            <Row >
             {countriesList}
             </Row>
             </React.Fragment>  

@@ -6,23 +6,46 @@ import GlobalMap from '../../../components/GlobalMap'
 
 export default function country({country}){
   console.log(country)
+  if(country.country_name === "S. Korea" ){
+    const Skorea = country.country_name
+    const southKorea = Skorea.replace(Skorea, "South Korea")
     return(
-        <React.Fragment>
-        <Card className="my-5 p-4">
-          <Row>
-            <Col sm={12} lg={6}>
-              <Banner country={country.country_name} cases={country.cases} deaths={country.deaths} criticals={country.serious_critical} recoveries={country.total_recovered} />
-            </Col>
-            <Col className="p-3" sm={12} lg={6}>
-              <DoughnutChart2  cases={toNum(country.cases)} criticals={toNum(country.serious_critical)} deaths={toNum(country.deaths)} recoveries={toNum(country.total_recovered)}/> 
-            </Col>
-          </Row>
-          <Card>
-            <GlobalMap country={country.country_name} />
-          </Card>
+      <React.Fragment>
+      <Card className="my-5 p-4">
+        <Row>
+          <Col sm={12} lg={6}>
+            <Banner active={country.active_cases} country={country.country_name} cases={country.cases} deaths={country.deaths} criticals={country.serious_critical} recoveries={country.total_recovered} />
+          </Col>
+          <Col className="p-3" sm={12} lg={6}>
+            <DoughnutChart2  active={toNum(country.active_cases)} cases={toNum(country.cases)} criticals={toNum(country.serious_critical)} deaths={toNum(country.deaths)} recoveries={toNum(country.total_recovered)}/> 
+          </Col>
+        </Row>
+        <Card>
+          <GlobalMap country={southKorea} />
         </Card>
-        </React.Fragment>
-    )
+      </Card>
+      </React.Fragment>
+  )
+  }else{
+    return(
+      <React.Fragment>
+      <Card className="my-5 p-2">
+        <Row>
+          <Col sm={12} lg={6}>
+            <Banner active={country.active_cases} country={country.country_name} cases={country.cases} deaths={country.deaths} criticals={country.serious_critical} recoveries={country.total_recovered} />
+          </Col>
+          <Col className="p-3" sm={12} lg={6}>
+            <DoughnutChart2 active={toNum(country.active_cases)} cases={toNum(country.cases)} criticals={toNum(country.serious_critical)} deaths={toNum(country.deaths)} recoveries={toNum(country.total_recovered)}/> 
+          </Col>
+        </Row>
+        <Card>
+          <GlobalMap country={country.country_name} />
+        </Card>
+      </Card>
+      </React.Fragment>
+  )
+  }
+  
 }
 
 export async function getStaticPaths(){
@@ -37,9 +60,12 @@ export async function getStaticPaths(){
 
     const paths = data.countries_stat.map(country => ({
         params: {id: country.country_name.replace( /\s/g, '')}
+        
     }))
     return{ paths, fallback: false}
+   
 }
+
 
 
 // ito ginagawa pag nagtawag ng data sa ibang api

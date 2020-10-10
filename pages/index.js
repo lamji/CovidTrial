@@ -46,11 +46,28 @@ export default function Home({data}){
 
     function search(e){
         e.preventDefault()
-        let skorea = "South Korea"
+        const skorea = "South Korea"
         if(targetCountry === skorea.toLocaleLowerCase()){
-          setTargetCountry("Suggested keyword S. Korea")
-        }
-        const match = countriesStats.find(country => country.country_name.toLowerCase() === targetCountry.toLowerCase())
+          const sample = targetCountry.replace(targetCountry, "S. Korea")
+          const match = countriesStats.find(country => country.country_name === sample)
+          if(match){
+            setName(match.country_name)
+            setCases(toNum(match.cases))
+            setCriticals(toNum(match.serious_critical))
+            setDeaths(toNum(match.deaths))
+            setRecoveries(toNum(match.total_recovered))
+            setActive(toNum(match.active_cases))
+            setTargetCountry("")
+            console.log(match)
+          }
+          fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${targetCountry}.json?access_token=${mapboxgl.accessToken}`)
+          .then(res => res.json())
+          .then(data => {
+            setLongtitude(data.features[0].center[0])
+            setLatitude(data.features[0].center[1])
+          })
+        }else{
+          const match = countriesStats.find(country => country.country_name.toLowerCase() === targetCountry.toLowerCase())
         if(match){
           setName(match.country_name)
           setCases(toNum(match.cases))
@@ -70,6 +87,7 @@ export default function Home({data}){
 
         }else{
           alert("Sorry not found. Check the keyword!")
+        }
         }
     }
     return(
@@ -131,9 +149,6 @@ export default function Home({data}){
               </Card>
             </Col>
           </Row>
-       
-          
-        
           </Col>
 
           <Col sx={12} md={6} className="p-0 shadow">
